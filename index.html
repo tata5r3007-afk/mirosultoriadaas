@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vitrine Direta • Móveis que inspiram seu espaço</title>
+  <!-- Bootstrap 5 + Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Font Awesome (ícones complementares) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    * { font-family: 'Inter', sans-serif; }
+    body { background-color: #f9fafc; }
+    .hero-gradient {
+      background: linear-gradient(135deg, #0b1e33 0%, #1c3e5c 100%);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-pattern {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" opacity="0.08"><path d="M50 70 L70 50 L130 50 L150 70 L150 130 L130 150 L70 150 L50 130 Z" fill="white"/><circle cx="100" cy="100" r="15" fill="white"/></svg>');
+      background-size: 120px;
+      opacity: 0.1;
+    }
+    .hero-content { position: relative; z-index: 2; }
+    .glass-card {
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(8px);
+      border-radius: 28px;
+      border: 1px solid rgba(255,255,255,0.3);
+      box-shadow: 0 20px 40px -12px rgba(0,0,0,0.15);
+    }
+    .section-title {
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      position: relative;
+      display: inline-block;
+      margin-bottom: 2rem;
+    }
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -10px; left: 0;
+      width: 70px; height: 4px;
+      background: #c49a6c;
+      border-radius: 4px;
+    }
+    .icon-badge {
+      width: 48px; height: 48px;
+      background: #e9eef3;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #1c3e5c;
+      font-size: 1.6rem;
+    }
+    .info-row {
+      border-bottom: 1px dashed #dee2e6;
+      padding: 0.9rem 0;
+    }
+    .info-row:last-child { border-bottom: none; }
+    .furniture-img {
+      border-radius: 24px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+      box-shadow: 0 15px 30px -10px rgba(0,0,0,0.1);
+    }
+    .furniture-img:hover { transform: scale(1.02); }
+    .bg-soft-primary { background-color: #eef3f9; }
+    .text-gold { color: #c49a6c; }
+    .btn-soft-primary {
+      background: rgba(28, 62, 92, 0.08);
+      color: #1c3e5c;
+      border-radius: 40px;
+      padding: 0.6rem 1.8rem;
+      font-weight: 600;
+      border: 1px solid rgba(28,62,92,0.15);
+    }
+    .btn-soft-primary:hover {
+      background: #1c3e5c;
+      color: white;
+    }
+    .footer-wave {
+      background: #0b1e33;
+      color: #ddd;
+    }
+    .map-placeholder {
+      background: #d4dee8;
+      border-radius: 24px;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #2c4b6b;
+      font-weight: 500;
+      border: 1px dashed #a0b8cc;
+    }
+    .badge-status {
+      background: #1f8b4c;
+      color: white;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: 40px;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar elegante -->
+<nav class="navbar navbar-expand-lg bg-white py-3 shadow-sm sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold fs-3" href="#">
+      <i class="fas fa-couch me-2" style="color: #c49a6c;"></i>
+      <span style="color: #0b1e33;">Vitrine</span><span style="color: #c49a6c;">Direta</span>
+    </a>
+    <div class="d-flex gap-3">
+      <a href="mailto:daniel@vitrinedireta.com.br" class="btn btn-soft-primary d-none d-md-block">
+        <i class="far fa-envelope me-1"></i> daniel@vitrinedireta.com.br
+      </a>
+      <a href="tel:+552130315700" class="btn btn-soft-primary">
+        <i class="fas fa-phone-alt me-1"></i> (21) 3031-5700
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section com frase inovadora e imagem de fundo sutil -->
+<section class="hero-gradient py-5 position-relative">
+  <div class="hero-pattern"></div>
+  <div class="container hero-content py-4 py-md-5">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <span class="badge-status mb-3"><i class="fas fa-check-circle me-1"></i> ATIVA • Desde 2016</span>
+        <h1 class="display-4 fw-bold mb-3" style="line-height: 1.2;">
+          Móveis com <span style="color: #c49a6c;">personalidade</span> para histórias reais
+        </h1>
+        <p class="lead fs-4 mb-4 opacity-90">
+          “Do clássico ao contemporâneo — cada peça conta uma nova página na sua casa.”
+        </p>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="#contato" class="btn btn-light btn-lg px-4 py-3 rounded-4 fw-semibold shadow-sm">
+            <i class="fas fa-map-pin me-2"></i>Nossa localização
+          </a>
+          <a href="tel:+552122535880" class="btn btn-outline-light btn-lg px-4 py-3 rounded-4 fw-semibold">
+            <i class="fas fa-headset me-2"></i>Falar com equipe
+          </a>
+        </div>
+        <div class="mt-5 d-flex gap-4">
+          <div><i class="fas fa-truck-fast me-1"></i> Entrega própria</div>
+          <div><i class="fas fa-medal me-1"></i> 9+ anos de mercado</div>
+          <div><i class="fas fa-star me-1 text-warning"></i> Qualidade premium</div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="position-relative">
+          <!-- Imagem inovadora: ambiente decorado (placekitten? Usaremos placeholder temático) -->
+          <img src="https://images.pexels.com/photos/276551/pexels-photo-276551.jpeg?auto=compress&cs=tinysrgb&w=800" 
+               alt="Ambiente decorado com móveis modernos" 
+               class="img-fluid furniture-img" 
+               style="border-radius: 40px 40px 40px 8px; max-height: 420px; width: 100%; object-fit: cover;"
+               onerror="this.onerror=null; this.src='https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800';">
+          <div class="position-absolute bottom-0 end-0 bg-white p-3 rounded-4 shadow-lg m-3 d-flex align-items-center">
+            <i class="fas fa-couch fa-2x me-2" style="color:#1c3e5c;"></i>
+            <div><strong>+5.000</strong><br><small>móveis entregues</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Seção de ícones e frases rápidas (valores) -->
+<section class="py-5 bg-white">
+  <div class="container">
+    <div class="row g-4 text-center">
+      <div class="col-md-3 col-6">
+        <div class="icon-badge mx-auto mb-3"><i class="fas fa-calendar-alt"></i></div>
+        <h5 class="fw-bold">9 anos</h5>
+        <p class="text-secondary">de tradição e confiança</p>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="icon-badge mx-auto mb-3"><i class="fas fa-store"></i></div>
+        <h5 class="fw-bold">Ativa</h5>
+        <p class="text-secondary">situação cadastral regular</p>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="icon-badge mx-auto mb-3"><i class="fas fa-tag"></i></div>
+        <h5 class="fw-bold">47.54-7-01</h5>
+        <p class="text-secondary">comércio varejista de móveis</p>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="icon-badge mx-auto mb-3"><i class="fas fa-map-marked-alt"></i></div>
+        <h5 class="fw-bold">Duque de Caxias</h5>
+        <p class="text-secondary">RJ · atendimento local</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Informações completas da empresa + imagens -->
+<section class="py-5 bg-soft-primary">
+  <div class="container">
+    <div class="text-center text-md-start">
+      <h2 class="section-title"><i class="fas fa-building me-2"></i>Dados institucionais</h2>
+    </div>
+    <div class="row g-4">
+      <!-- Coluna esquerda: Registros e contatos -->
+      <div class="col-lg-7">
+        <div class="glass-card p-4 p-xl-5 h-100">
+          <div class="d-flex align-items-center gap-3 mb-4">
+            <i class="fas fa-file-signature fa-2x" style="color:#1c3e5c;"></i>
+            <h3 class="fw-bold mb-0">Vitrine Direta S.A.</h3>
+            <span class="ms-auto badge bg-light text-dark fw-normal">CNPJ 25.300.362/0001-29</span>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="info-row"><i class="fas fa-tag me-2 text-secondary"></i><strong>Nome Fantasia:</strong> Vitrine Direta</div>
+              <div class="info-row"><i class="fas fa-calendar me-2 text-secondary"></i><strong>Abertura:</strong> 20/07/2016 <span class="text-success">(9a 9m 3d)</span></div>
+              <div class="info-row"><i class="fas fa-id-card me-2 text-secondary"></i><strong>IE (RS):</strong> 900/0046977</div>
+              <div class="info-row"><i class="fas fa-chart-line me-2 text-secondary"></i><strong>CNAE principal:</strong> 47.54-7-01</div>
+              <div class="info-row"><i class="fas fa-check-circle me-2 text-success"></i><strong>Situação:</strong> Ativa</div>
+            </div>
+            <div class="col-md-6">
+              <div class="info-row"><i class="fas fa-envelope me-2"></i><strong>E-mail:</strong> daniel@vitrinedireta.com.br</div>
+              <div class="info-row"><i class="fas fa-phone-alt me-2"></i><strong>Tel:</strong> (21) 3031-5700</div>
+              <div class="info-row"><i class="fas fa-phone me-2"></i><strong>Tel 2:</strong> (21) 2253-5880</div>
+              <div class="info-row"><i class="fas fa-location-dot me-2"></i><strong>Endereço:</strong> Av. Ol 1A, 75 · Armz B5 Bloco B</div>
+              <div class="info-row"><i class="fas fa-city me-2"></i><strong>Bairro:</strong> Parque Duque · CEP 25085-380</div>
+            </div>
+          </div>
+          <div class="mt-4 p-3 bg-white rounded-4 border">
+            <i class="fas fa-mail-bulk me-2" style="color:#c49a6c;"></i>
+            <strong>Para correspondência:</strong> Vitrine Direta S.A. – Avenida Ol 1A, 75, Armz B5 Bloco B, Parque Duque, Duque de Caxias – RJ, 25085-380
+          </div>
+        </div>
+      </div>
+      <!-- Coluna direita: imagem inovadora + localização -->
+      <div class="col-lg-5">
+        <div class="glass-card p-4 h-100 d-flex flex-column">
+          <div class="mb-4">
+            <img src="https://images.pexels.com/photos/4846455/pexels-photo-4846455.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                 alt="Design de interiores contemporâneo" 
+                 class="img-fluid furniture-img"
+                 style="border-radius: 22px; height: 180px; width: 100%; object-fit: cover;">
+          </div>
+          <h5 class="fw-bold"><i class="fas fa-map-pin me-2" style="color:#c49a6c;"></i>Visite nosso showroom</h5>
+          <p class="mb-3"><strong>Duque de Caxias, RJ</strong><br>Parque Duque – próximo ao polo moveleiro</p>
+          <div class="map-placeholder mb-3">
+            <i class="fas fa-map-location-dot me-2"></i> Av. Ol 1A, 75 · Armazém B5
+          </div>
+          <div class="mt-auto">
+            <div class="d-flex justify-content-between">
+              <span><i class="bi bi-whatsapp me-1"></i> (21) 2253-5880</span>
+              <span><i class="bi bi-clock-history me-1"></i> Seg-Sex 9h-18h</span>
+            </div>
+            <hr>
+            <p class="fst-italic small">"Referência em móveis planejados e pronta entrega na Baixada Fluminense."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sobre a empresa + mais imagens inovadoras -->
+<section class="py-5">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-md-6">
+        <span class="text-uppercase fw-semibold small tracking-wide text-secondary">Sobre nós</span>
+        <h2 class="display-6 fw-bold mb-4">Inovação que <span style="color: #c49a6c;">transforma ambientes</span></h2>
+        <p class="lead fs-5">A <strong>Vitrine Direta S.A.</strong> (CNPJ 25.300.362/0001-29), fundada em 20/07/2016, atua no comércio varejista de móveis com padrão diferenciado. Localizada estrategicamente em Duque de Caxias/RJ, oferecemos desde móveis sob medida até linhas exclusivas para salas, quartos e escritórios.</p>
+        <p><i class="fas fa-check-circle me-2" style="color:#1f8b4c;"></i> Atividade principal: 47.54-7-01 – especializada em móveis residenciais e corporativos.</p>
+        <p><i class="fas fa-check-circle me-2" style="color:#1f8b4c;"></i> 9 anos, 9 meses e 3 dias de atuação, sempre com situação cadastral <strong>ATIVA</strong>.</p>
+        <div class="mt-4">
+          <a href="mailto:daniel@vitrinedireta.com.br" class="btn btn-lg px-4 text-white me-3" style="background:#0b1e33; border-radius: 40px;"><i class="far fa-paper-plane me-1"></i> Enviar e-mail</a>
+          <a href="tel:+552130315700" class="btn btn-outline-secondary btn-lg px-4 rounded-5"><i class="fas fa-phone-alt"></i> Ligar agora</a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row g-3">
+          <div class="col-6">
+            <img src="https://images.pexels.com/photos/3757055/pexels-photo-3757055.jpeg?auto=compress&cs=tinysrgb&w=400" 
+                 class="img-fluid furniture-img" alt="Móveis planejados" style="height: 200px; width:100%; object-fit: cover;">
+          </div>
+          <div class="col-6">
+            <img src="https://images.pexels.com/photos/4846097/pexels-photo-4846097.jpeg?auto=compress&cs=tinysrgb&w=400" 
+                 class="img-fluid furniture-img" alt="Sala de estar moderna" style="height: 200px; width:100%; object-fit: cover;">
+          </div>
+          <div class="col-12">
+            <img src="https://images.pexels.com/photos/276583/pexels-photo-276583.jpeg?auto=compress&cs=tinysrgb&w=800" 
+                 class="img-fluid furniture-img mt-2" alt="Decoração inovadora" style="height: 180px; width:100%; object-fit: cover;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Seção de contato rápido e ícones com informações adicionais -->
+<section id="contato" class="py-5 bg-white border-top">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold display-6">Fale com a <span style="color:#c49a6c;">Vitrine Direta</span></h2>
+      <p class="text-secondary">atendimento personalizado para você</p>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-5 col-lg-4">
+        <div class="p-4 bg-soft-primary rounded-4 h-100 text-center">
+          <div class="icon-badge mx-auto mb-3 bg-white"><i class="fas fa-phone-volume fa-2x"></i></div>
+          <h5>Telefones diretos</h5>
+          <p class="mb-1"><a href="tel:+552130315700" class="text-dark fw-bold text-decoration-none">(21) 3031-5700</a></p>
+          <p><a href="tel:+552122535880" class="text-dark fw-bold text-decoration-none">(21) 2253-5880</a></p>
+          <i class="fas fa-headset"></i> suporte de seg. a sex.
+        </div>
+      </div>
+      <div class="col-md-5 col-lg-4">
+        <div class="p-4 bg-soft-primary rounded-4 h-100 text-center">
+          <div class="icon-badge mx-auto mb-3 bg-white"><i class="fas fa-at fa-2x"></i></div>
+          <h5>E-mail corporativo</h5>
+          <p class="mb-2"><a href="mailto:daniel@vitrinedireta.com.br" class="text-primary fw-semibold">daniel@vitrinedireta.com.br</a></p>
+          <small>Resposta em até 2h úteis</small>
+          <hr class="my-3">
+          <p class="mb-0"><i class="fas fa-building"></i> Razão: Vitrine Direta S.A.</p>
+        </div>
+      </div>
+      <div class="col-md-5 col-lg-4">
+        <div class="p-4 bg-soft-primary rounded-4 h-100 text-center">
+          <div class="icon-badge mx-auto mb-3 bg-white"><i class="fas fa-qrcode fa-2x"></i></div>
+          <h5>Documentação fiscal</h5>
+          <p>CNPJ 25.300.362/0001-29<br>IE: 900/0046977</p>
+          <span class="badge bg-success"><i class="far fa-check-circle"></i> Emissão de NF-e</span>
+        </div>
+      </div>
+    </div>
+    <!-- endereço completo com ícone -->
+    <div class="mt-5 p-4 bg-white border rounded-4 shadow-sm">
+      <div class="row align-items-center">
+        <div class="col-md-8">
+          <i class="fas fa-truck-fast me-2 fa-lg" style="color:#c49a6c;"></i>
+          <span class="fw-bold fs-5">Endereço sede / correspondência:</span><br>
+          Avenida Ol 1A, 75 – Armz B5 Bloco B, Parque Duque, Duque de Caxias – RJ • CEP 25085-380
+        </div>
+        <div class="col-md-4 text-md-end mt-3 mt-md-0">
+          <a href="#" class="btn btn-outline-dark rounded-5"><i class="bi bi-copy"></i> Copiar endereço</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer com informações complementares e frase final -->
+<footer class="footer-wave text-white pt-5 pb-4">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-md-5">
+        <h4 class="fw-bold"><i class="fas fa-couch me-2" style="color:#c49a6c;"></i>Vitrine Direta</h4>
+        <p class="opacity-75">Transformando casas em lares desde 2016. Móveis com design, qualidade e atendimento próximo.</p>
+        <div class="d-flex gap-3">
+          <i class="fab fa-instagram fa-xl"></i><i class="fab fa-facebook fa-xl"></i><i class="fab fa-whatsapp fa-xl"></i>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h5><i class="far fa-clock me-1"></i> Horário</h5>
+        <p>Segunda a sexta: 9h às 18h<br>Sábado: 9h às 13h (showroom)</p>
+        <p class="small">CNPJ 25.300.362/0001-29 · Insc. Est. 900/0046977</p>
+      </div>
+      <div class="col-md-3">
+        <h5><i class="fas fa-shield-alt"></i> Confiança</h5>
+        <p>9 anos e 9 meses de mercado. Situação ATIVA junto à Receita Federal.</p>
+        <span class="badge bg-light text-dark p-2">CNAE 47.54-7-01</span>
+      </div>
+    </div>
+    <hr class="opacity-25 mt-4">
+    <div class="d-flex flex-wrap justify-content-between">
+      <small>© 2026 Vitrine Direta S.A. – Todos os direitos reservados.</small>
+      <small><i class="fas fa-heart" style="color:#c49a6c;"></i> Feito com inovação e cuidado</small>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- pequeno script para simular cópia de endereço (opcional) -->
+<script>
+  document.querySelectorAll('.btn-outline-dark').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const addr = "Avenida Ol 1A, 75 – Armz B5 Bloco B, Parque Duque, Duque de Caxias – RJ, 25085-380";
+      navigator.clipboard?.writeText(addr);
+      alert('📋 Endereço copiado!');
+    });
+  });
+</script>
+</body>
+</html>
