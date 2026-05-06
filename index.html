@@ -1,197 +1,1276 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Hernandes Imobiliária - Compra e venda de imóveis próprios em Manaus. Mais de 25 anos de experiência.">
-  <title>Hernandes Imobiliária | Compra e Venda de Imóveis Próprios</title>
-  <!-- Bootstrap 5 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome 6 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <!-- CSS personalizado -->
-  <style>
-    :root {
-      --primary: #0d6efd;
-      --secondary: #6c757d;
-      --accent: #ffc107;
-      --dark: #212529;
-      --light: #f8f9fa;
-    }
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-    .navbar-custom { background-color: var(--dark); }
-    .navbar-custom .nav-link, .navbar-custom .navbar-brand { color: white; }
-    .navbar-custom .nav-link:hover { color: var(--accent); }
-    .hero {
-      background: linear-gradient(135deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.4) 100%),
-                  url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
-      height: 70vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: #fff;
-    }
-    .hero h1 { font-size: 3rem; font-weight: 700; text-shadow: 2px 2px 8px rgba(0,0,0,0.7); }
-    .hero .lead { font-size: 1.25rem; text-shadow: 1px 1px 5px rgba(0,0,0,0.6); }
-    .section-title { position: relative; padding-bottom: 15px; margin-bottom: 30px; }
-    .section-title::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      bottom: 0;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 3px;
-      background: var(--primary);
-    }
-    .icon-box i { color: var(--primary); transition: 0.3s; }
-    .icon-box:hover i { color: var(--accent); transform: scale(1.2); }
-    .footer { background-color: var(--dark); color: #ccc; }
-    .footer a { color: #bbb; text-decoration: none; }
-    .footer a:hover { color: white; text-decoration: underline; }
-    .btn-accent { background-color: var(--accent); border-color: var(--accent); color: #000; font-weight: bold; }
-    .btn-accent:hover { background-color: #e0a800; border-color: #e0a800; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hernandes Imobiliária | Compra e Venda de Imóveis Próprios - Manaus/AM</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --azul-profundo: #0a1e2f;
+            --azul-medio: #0f2b3d;
+            --dourado: #c8a052;
+            --dourado-claro: #d4b56a;
+            --dourado-suave: #f5ecd7;
+            --branco: #ffffff;
+            --cinza-claro: #f8f9fa;
+            --cinza-medio: #6c757d;
+            --verde-whatsapp: #25d366;
+            --sombra-suave: 0 8px 32px rgba(0, 0, 0, 0.08);
+            --sombra-media: 0 20px 50px rgba(0, 0, 0, 0.12);
+            --sombra-dourada: 0 10px 40px rgba(200, 160, 82, 0.25);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--branco);
+            color: #2c2c2c;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* ========== NAVBAR ========== */
+        .navbar {
+            background: rgba(10, 30, 47, 0.97);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(200, 160, 82, 0.3);
+            padding: 14px 0;
+            transition: all 0.4s ease;
+            z-index: 1000;
+        }
+
+        .navbar.scrolled {
+            padding: 8px 0;
+            background: rgba(10, 30, 47, 0.99);
+            box-shadow: var(--sombra-media);
+        }
+
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.55rem;
+            color: var(--dourado) !important;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand i {
+            color: var(--dourado);
+            margin-right: 8px;
+            font-size: 1.5rem;
+        }
+
+        .navbar-brand:hover {
+            color: var(--dourado-claro) !important;
+            transform: scale(1.03);
+        }
+
+        .nav-link {
+            color: #d1d9e0 !important;
+            font-weight: 500;
+            font-size: 0.95rem;
+            margin: 0 6px;
+            padding: 8px 16px !important;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--dourado) !important;
+            background: rgba(200, 160, 82, 0.08);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--dourado);
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 60%;
+        }
+
+        .navbar-toggler {
+            border: 1px solid rgba(200, 160, 82, 0.5);
+            border-radius: 8px;
+            padding: 6px 10px;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(200, 160, 82, 0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        /* ========== HERO SECTION ========== */
+        .hero-section {
+            position: relative;
+            min-height: 100vh;
+            background: linear-gradient(160deg, #050f1a 0%, #0a1e2f 30%, #0f2b3d 55%, #0a1e2f 80%, #050f1a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero-bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.25;
+            z-index: 0;
+            pointer-events: none;
+            filter: brightness(0.7) saturate(0.8);
+        }
+
+        .hero-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: var(--dourado);
+            opacity: 0;
+            animation: floatUp 8s infinite;
+        }
+
+        .particle:nth-child(1) { width: 4px; height: 4px; left: 10%; animation-delay: 0s; animation-duration: 7s; }
+        .particle:nth-child(2) { width: 6px; height: 6px; left: 25%; animation-delay: 2s; animation-duration: 9s; }
+        .particle:nth-child(3) { width: 3px; height: 3px; left: 40%; animation-delay: 4s; animation-duration: 6s; }
+        .particle:nth-child(4) { width: 5px; height: 5px; left: 55%; animation-delay: 1s; animation-duration: 8s; }
+        .particle:nth-child(5) { width: 4px; height: 4px; left: 70%; animation-delay: 3s; animation-duration: 10s; }
+        .particle:nth-child(6) { width: 7px; height: 7px; left: 85%; animation-delay: 5s; animation-duration: 7.5s; }
+        .particle:nth-child(7) { width: 3px; height: 3px; left: 15%; animation-delay: 6s; animation-duration: 8.5s; }
+        .particle:nth-child(8) { width: 5px; height: 5px; left: 60%; animation-delay: 3.5s; animation-duration: 9.5s; }
+
+        @keyframes floatUp {
+            0% { opacity: 0; transform: translateY(100vh) scale(0.5); }
+            10% { opacity: 0.7; }
+            50% { opacity: 0.4; }
+            90% { opacity: 0.1; }
+            100% { opacity: 0; transform: translateY(-10vh) scale(1.8); }
+        }
+
+        .hero-glow {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(200, 160, 82, 0.08) 0%, rgba(200, 160, 82, 0.02) 40%, transparent 70%);
+            top: -100px;
+            right: -150px;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .hero-glow-2 {
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(200, 160, 82, 0.06) 0%, rgba(200, 160, 82, 0.01) 40%, transparent 70%);
+            bottom: -80px;
+            left: -100px;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(200, 160, 82, 0.12);
+            border: 1px solid rgba(200, 160, 82, 0.4);
+            color: var(--dourado-claro);
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .hero-badge i {
+            margin-right: 8px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.25); }
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.8rem;
+            font-weight: 800;
+            color: var(--branco);
+            margin-bottom: 16px;
+            letter-spacing: 2px;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero-title .gold-text {
+            color: var(--dourado);
+            display: block;
+            font-size: 3.2rem;
+            font-weight: 700;
+            font-style: italic;
+            letter-spacing: 3px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #bcc6cf;
+            font-weight: 300;
+            margin-bottom: 10px;
+            animation: fadeInUp 1s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-tagline {
+            font-size: 1.05rem;
+            color: #8899aa;
+            font-weight: 400;
+            margin-bottom: 36px;
+            animation: fadeInUp 1.2s ease;
+            font-style: italic;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+            animation: fadeInUp 1.4s ease;
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, var(--dourado) 0%, #b8913d 100%);
+            color: #0a1e2f;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            transition: all 0.4s ease;
+            box-shadow: var(--sombra-dourada);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 45px rgba(200, 160, 82, 0.4);
+            color: #0a1e2f;
+            background: linear-gradient(135deg, #d4b56a 0%, #c8a052 100%);
+        }
+
+        .btn-gold i {
+            margin-right: 8px;
+        }
+
+        .btn-outline-gold {
+            background: transparent;
+            color: var(--dourado);
+            border: 2px solid var(--dourado);
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            transition: all 0.4s ease;
+        }
+
+        .btn-outline-gold:hover {
+            background: rgba(200, 160, 82, 0.1);
+            border-color: var(--dourado-claro);
+            color: var(--dourado-claro);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(200, 160, 82, 0.2);
+        }
+
+        .btn-outline-gold i {
+            margin-right: 8px;
+        }
+
+        .hero-scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            animation: bounceDown 2s infinite;
+            cursor: pointer;
+        }
+
+        .hero-scroll-indicator span {
+            display: block;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 2px solid rgba(200, 160, 82, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dourado);
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .hero-scroll-indicator span:hover {
+            background: rgba(200, 160, 82, 0.15);
+            border-color: var(--dourado);
+        }
+
+        @keyframes bounceDown {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(12px); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ========== SEÇÃO SOBRE ========== */
+        .section-sobre {
+            padding: 100px 0;
+            background: var(--branco);
+            position: relative;
+        }
+
+        .section-sobre::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, transparent, var(--dourado), transparent);
+            opacity: 0.6;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--dourado);
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: var(--azul-profundo);
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 3px;
+            background: var(--dourado);
+            margin-top: 12px;
+            border-radius: 2px;
+        }
+
+        .sobre-texto {
+            font-size: 1.05rem;
+            color: #4a5568;
+            line-height: 1.9;
+        }
+
+        .sobre-card {
+            background: var(--cinza-claro);
+            border-radius: 16px;
+            padding: 30px;
+            border-left: 4px solid var(--dourado);
+            transition: all 0.4s ease;
+            height: 100%;
+        }
+
+        .sobre-card:hover {
+            box-shadow: var(--sombra-media);
+            transform: translateY(-4px);
+            border-left-color: #b8913d;
+        }
+
+        .sobre-card .icon-circle {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: rgba(200, 160, 82, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            font-size: 1.5rem;
+            color: var(--dourado);
+            overflow: hidden;
+        }
+
+        .sobre-card .icon-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .sobre-card h5 {
+            font-weight: 700;
+            color: var(--azul-profundo);
+            margin-bottom: 8px;
+        }
+
+        .sobre-card p {
+            color: #5a6575;
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        .sobre-imagem {
+            border-radius: 20px;
+            box-shadow: var(--sombra-media);
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .sobre-imagem:hover {
+            transform: scale(1.02);
+        }
+
+        /* ========== SEÇÃO DADOS ========== */
+        .section-dados {
+            padding: 100px 0;
+            background: var(--azul-profundo);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-dados::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(200, 160, 82, 0.04) 0%, transparent 70%);
+            top: -200px;
+            right: -200px;
+            pointer-events: none;
+        }
+
+        .section-dados .section-label {
+            color: var(--dourado-claro);
+        }
+
+        .section-dados .section-title {
+            color: var(--branco);
+        }
+
+        .dado-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 28px 24px;
+            text-align: center;
+            transition: all 0.4s ease;
+            height: 100%;
+            backdrop-filter: blur(5px);
+        }
+
+        .dado-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(200, 160, 82, 0.4);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .dado-card .dado-icon {
+            font-size: 2.5rem;
+            color: var(--dourado);
+            margin-bottom: 14px;
+        }
+
+        .dado-card h5 {
+            color: #d1d9e0;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .dado-card .dado-valor {
+            color: var(--branco);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+
+        .dado-card .dado-valor small {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: #8899aa;
+            display: block;
+        }
+
+        .dado-card p {
+            color: #bcc6cf;
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* ========== SEÇÃO CONTATO ========== */
+        .section-contato {
+            padding: 100px 0;
+            background: var(--cinza-claro);
+            position: relative;
+        }
+
+        .contato-card {
+            background: var(--branco);
+            border-radius: 20px;
+            padding: 36px 28px;
+            text-align: center;
+            box-shadow: var(--sombra-suave);
+            transition: all 0.4s ease;
+            height: 100%;
+            border: 1px solid transparent;
+        }
+
+        .contato-card:hover {
+            box-shadow: var(--sombra-media);
+            transform: translateY(-6px);
+            border-color: rgba(200, 160, 82, 0.3);
+        }
+
+        .contato-card .contato-icon {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(200, 160, 82, 0.15) 0%, rgba(200, 160, 82, 0.05) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+            font-size: 1.8rem;
+            color: var(--dourado);
+            transition: all 0.3s ease;
+        }
+
+        .contato-card:hover .contato-icon {
+            background: linear-gradient(135deg, var(--dourado) 0%, #b8913d 100%);
+            color: #0a1e2f;
+            box-shadow: var(--sombra-dourada);
+        }
+
+        .contato-card h5 {
+            font-weight: 700;
+            color: var(--azul-profundo);
+            margin-bottom: 8px;
+            font-size: 1.15rem;
+        }
+
+        .contato-card a,
+        .contato-card .info-text {
+            color: #4a5568;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+            word-break: break-all;
+        }
+
+        .contato-card a:hover {
+            color: var(--dourado);
+        }
+
+        .contato-card .telefone-destaque {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--azul-profundo);
+            letter-spacing: 0.5px;
+        }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--verde-whatsapp);
+            color: #fff;
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-btn:hover {
+            background: #20b954;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(37, 211, 102, 0.45);
+            color: #fff;
+        }
+
+        /* ========== SEÇÃO LOCALIZAÇÃO ========== */
+        .section-localizacao {
+            padding: 100px 0;
+            background: var(--branco);
+        }
+
+        .endereco-box {
+            background: var(--cinza-claro);
+            border-radius: 20px;
+            padding: 40px 32px;
+            border: 1px solid #e8ecf1;
+            transition: all 0.4s ease;
+        }
+
+        .endereco-box:hover {
+            box-shadow: var(--sombra-media);
+            border-color: rgba(200, 160, 82, 0.3);
+        }
+
+        .endereco-box .endereco-icon {
+            font-size: 2.5rem;
+            color: var(--dourado);
+            margin-bottom: 16px;
+        }
+
+        .endereco-box h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--azul-profundo);
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .endereco-box p {
+            color: #4a5568;
+            margin-bottom: 6px;
+            font-size: 1rem;
+        }
+
+        .endereco-box .cep-badge {
+            display: inline-block;
+            background: var(--azul-profundo);
+            color: var(--dourado);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            margin-top: 8px;
+        }
+
+        .mapa-imagem {
+            width: 100%;
+            height: 100%;
+            min-height: 320px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: var(--sombra-suave);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .mapa-imagem:hover {
+            border-color: var(--dourado);
+            box-shadow: var(--sombra-media);
+            transform: scale(1.02);
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            background: var(--azul-profundo);
+            color: #bcc6cf;
+            padding: 50px 0 30px;
+            border-top: 3px solid var(--dourado);
+        }
+
+        .footer h5 {
+            color: var(--dourado);
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            margin-bottom: 18px;
+            font-size: 1.3rem;
+        }
+
+        .footer p,
+        .footer small {
+            color: #8899aa;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .footer .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer .footer-links li {
+            margin-bottom: 8px;
+        }
+
+        .footer .footer-links a,
+        .footer-bottom a {
+            color: #8899aa;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .footer .footer-links a:hover,
+        .footer-bottom a:hover {
+            color: var(--dourado);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 36px;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #6c7a88;
+        }
+
+        .footer-bottom .gold-link {
+            color: var(--dourado);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* ========== BOTÃO VOLTAR AO TOPO ========== */
+        .btn-voltar-topo {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 999;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--dourado);
+            color: #0a1e2f;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: var(--sombra-dourada);
+            transition: all 0.4s ease;
+            opacity: 0;
+            visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-voltar-topo.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .btn-voltar-topo:hover {
+            background: #d4b56a;
+            transform: translateY(-4px);
+            box-shadow: 0 16px 35px rgba(200, 160, 82, 0.5);
+        }
+
+        /* ========== RESPONSIVIDADE ========== */
+        @media (max-width: 992px) {
+            .hero-title { font-size: 2.8rem; }
+            .hero-title .gold-text { font-size: 2.4rem; }
+            .section-title { font-size: 2rem; }
+            .navbar-brand { font-size: 1.3rem; }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.2rem; }
+            .hero-title .gold-text { font-size: 1.8rem; }
+            .hero-subtitle { font-size: 1rem; }
+            .section-sobre, .section-dados, .section-contato, .section-localizacao { padding: 60px 0; }
+            .section-title { font-size: 1.7rem; }
+            .btn-gold, .btn-outline-gold { padding: 12px 24px; font-size: 0.9rem; width: 100%; text-align: center; justify-content: center; }
+            .hero-buttons { flex-direction: column; align-items: center; width: 100%; }
+            .hero-buttons .btn-gold, .hero-buttons .btn-outline-gold { width: 100%; max-width: 320px; }
+            .dado-card { padding: 20px 16px; }
+            .dado-card .dado-valor { font-size: 1.3rem; }
+            .contato-card { padding: 24px 16px; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title { font-size: 1.8rem; }
+            .hero-title .gold-text { font-size: 1.5rem; }
+            .hero-badge { font-size: 0.75rem; padding: 8px 16px; }
+            .section-title { font-size: 1.5rem; }
+        }
+    </style>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="index.html">
-        <i class="fa-solid fa-building me-2"></i>Hernandes Imobiliária
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
-        <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarMain">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
-          <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Legal</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="privacidade.html">Política de Privacidade</a></li>
-              <li><a class="dropdown-item" href="termos.html">Termos de Uso</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
 
-  <!-- Hero Section -->
-  <header class="hero">
-    <div class="container">
-      <h1>Hernandes Imobiliária</h1>
-      <p class="lead mb-4">Compra e venda de imóveis próprios em Manaus com segurança e tradição desde 2000.</p>
-      <a href="tel:+559221270001" class="btn btn-accent btn-lg me-2"><i class="fa-solid fa-phone"></i> Ligar Agora</a>
-      <a href="#contato" class="btn btn-outline-light btn-lg"><i class="fa-solid fa-envelope"></i> Fale Conosco</a>
-    </div>
-  </header>
-
-  <!-- Sobre breve -->
-  <section id="sobre" class="py-5">
-    <div class="container text-center">
-      <h2 class="section-title">Quem Somos</h2>
-      <p class="lead mx-auto" style="max-width: 800px;">
-        A <strong>Hernandes Imobiliária</strong> (Hernandes Administradora de Bens Próprios LTDA) atua há mais de 25 anos no mercado imobiliário de Manaus, especializada na compra e venda de imóveis próprios. CNPJ 03.838.437/0001-97.
-      </p>
-      <a href="sobre.html" class="btn btn-outline-primary">Saiba mais</a>
-    </div>
-  </section>
-
-  <!-- Serviços -->
-  <section id="servicos" class="py-5 bg-light">
-    <div class="container text-center">
-      <h2 class="section-title">Nossos Serviços</h2>
-      <div class="row g-4 mt-4">
-        <div class="col-md-4 icon-box">
-          <i class="fa-solid fa-house-circle-check fa-3x mb-3"></i>
-          <h5>Compra de Imóveis</h5>
-          <p>Adquirimos imóveis de forma rápida e transparente, com avaliação justa.</p>
-        </div>
-        <div class="col-md-4 icon-box">
-          <i class="fa-solid fa-hand-holding-dollar fa-3x mb-3"></i>
-          <h5>Venda de Imóveis Próprios</h5>
-          <p>Comercializamos imóveis próprios com toda a documentação regularizada.</p>
-        </div>
-        <div class="col-md-4 icon-box">
-          <i class="fa-solid fa-file-contract fa-3x mb-3"></i>
-          <h5>Assessoria Documental</h5>
-          <p>Oferecemos suporte completo na análise de documentos e contratos.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contato -->
-  <section id="contato" class="py-5">
-    <div class="container">
-      <h2 class="section-title text-center">Fale Conosco</h2>
-      <div class="row mt-5 align-items-center">
-        <div class="col-lg-6 mb-4">
-          <div class="card shadow-sm p-4 h-100">
-            <h5><i class="fa-solid fa-location-dot me-2 text-primary"></i>Endereço</h5>
-            <p class="ms-4">Av. Guaruba, 787, Bloco A, Distrito Industrial I<br>Manaus - AM, 69075-080</p>
-            <h5><i class="fa-solid fa-phone me-2 text-primary"></i>Telefones</h5>
-            <div class="ms-4">
-              <a href="tel:+559221270001" class="d-block text-dark">(92) 2127-0001</a>
-              <a href="tel:+559221270029" class="d-block text-dark">(92) 2127-0029</a>
-              <a href="tel:+559221270007" class="d-block text-dark">(92) 2127-0007</a>
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fa-solid fa-building-columns"></i> Hernandes Imobiliária
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link active" href="#home"><i class="fa-solid fa-house me-1"></i> Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sobre.html"><i class="fa-solid fa-circle-info me-1"></i> Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#dados"><i class="fa-solid fa-chart-simple me-1"></i> Dados</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato"><i class="fa-solid fa-phone me-1"></i> Contato</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#localizacao"><i class="fa-solid fa-location-dot me-1"></i> Localização</a></li>
+                </ul>
             </div>
-            <h5 class="mt-3"><i class="fa-solid fa-envelope me-2 text-primary"></i>Email</h5>
-            <p class="ms-4"><a href="mailto:jose.pequeno@transhernandes.com.br" class="text-dark">jose.pequeno@transhernandes.com.br</a></p>
-            <h5><i class="fa-solid fa-clock me-2 text-primary"></i>Horário</h5>
-            <p class="ms-4">Seg a Sex: 8h - 18h</p>
-          </div>
         </div>
-        <!-- Mapa ou formulário simples -->
-        <div class="col-lg-6">
-          <div class="ratio ratio-4x3 rounded overflow-hidden shadow-sm">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.994498377234!2d-59.98567368463989!3d-3.068373041639733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x926c1f0750c0d3d5%3A0xc37b3f0d2e70217c!2sAv.%20Guaruba%2C%20787%20-%20Distrito%20Industrial%20I%2C%20Manaus%20-%20AM!5e0!3m2!1spt-BR!2sbr!4v1689600000000" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </nav>
 
-  <!-- Footer -->
-  <footer class="footer pt-5 pb-3">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4 mb-4">
-          <h5 class="text-white"><i class="fa-solid fa-building"></i> Hernandes Imobiliária</h5>
-          <p>CNPJ: 03.838.437/0001-97<br>Razão Social: Hernandes Administradora de Bens Próprios LTDA<br>Desde 26/05/2000</p>
-        </div>
-        <div class="col-md-4 mb-4">
-          <h5 class="text-white">Links Úteis</h5>
-          <ul class="list-unstyled">
-            <li><a href="sobre.html">Sobre a empresa</a></li>
-            <li><a href="privacidade.html">Política de Privacidade</a></li>
-            <li><a href="termos.html">Termos de Uso</a></li>
-            <li><a href="#contato">Contato</a></li>
-          </ul>
-        </div>
-        <div class="col-md-4 mb-4">
-          <h5 class="text-white">Redes Sociais</h5>
-          <div class="fs-4">
-            <a href="#" class="me-3"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#" class="me-3"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-          </div>
-        </div>
-      </div>
-      <hr class="text-secondary">
-      <div class="text-center">
-        <small>© 2026 Hernandes Imobiliária. Todos os direitos reservados.</small>
-      </div>
-    </div>
-  </footer>
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero-section" id="home">
+        <!-- Imagem de fundo -->
+        <img src="https://www.hernandez.com.br/assets/img/tmp/slide-bilbao.jpg" alt="Fundo arquitetônico" class="hero-bg-image" onerror="this.style.display='none'">
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Partículas -->
+        <div class="hero-particles">
+            <div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div>
+            <div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div>
+        </div>
+        <div class="hero-glow"></div>
+        <div class="hero-glow-2"></div>
+
+        <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+            <div class="hero-badge">
+                <i class="fa-solid fa-star"></i> Desde 2000 — 25+ Anos de História
+            </div>
+            <h1 class="hero-title">
+                Hernandes
+                <span class="gold-text">Imobiliária</span>
+            </h1>
+            <p class="hero-subtitle">Hernandes Administradora de Bens Próprios LTDA</p>
+            <p class="hero-tagline">Compra e venda de imóveis próprios — Tradição e confiança em Manaus/AM</p>
+            <div class="hero-buttons">
+                <a href="#contato" class="btn btn-gold"><i class="fa-solid fa-phone-volume"></i> Entrar em Contato</a>
+                <a href="sobre.html" class="btn btn-outline-gold"><i class="fa-solid fa-arrow-down"></i> Conheça Mais</a>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="hero-scroll-indicator" onclick="document.getElementById('sobre').scrollIntoView({behavior:'smooth'})">
+            <span><i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+    </section>
+
+    <!-- ==================== SEÇÃO SOBRE ==================== -->
+    <section class="section-sobre" id="sobre">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6" data-aos="fade-right" data-aos-duration="800">
+                    <span class="section-label"><i class="fa-solid fa-building me-1"></i> Nossa História</span>
+                    <h2 class="section-title">Sobre a Hernandes Imobiliária</h2>
+                    <p class="sobre-texto">
+                        A <strong>Hernandes Imobiliária</strong>, com razão social <strong>Hernandes Administradora de Bens Próprios LTDA</strong>,
+                        foi fundada em <strong>26 de maio de 2000</strong> e já soma mais de <strong>25 anos de atuação</strong> no mercado
+                        imobiliário de Manaus, Amazonas. Nossa atividade principal, registrada junto à Receita Federal sob o código
+                        <strong>68.10-2-01</strong>, é a <strong>compra e venda de imóveis próprios</strong>.
+                    </p>
+                    <p class="sobre-texto">
+                        Com <strong>situação cadastral ATIVA</strong> e sede no Distrito Industrial I, construímos uma trajetória
+                        sólida pautada na transparência, ética e compromisso com cada cliente. Ao longo de mais de duas décadas,
+                        nos consolidamos como referência no segmento imobiliário da região Norte.
+                    </p>
+                    <p class="sobre-texto">
+                        <i class="fa-solid fa-check-circle" style="color: var(--dourado);"></i> CNPJ ativo e regularizado<br>
+                        <i class="fa-solid fa-check-circle" style="color: var(--dourado);"></i> Mais de 25 anos de experiência<br>
+                        <i class="fa-solid fa-check-circle" style="color: var(--dourado);"></i> Atendimento personalizado em Manaus/AM
+                    </p>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="800">
+                    <!-- Imagem ilustrativa (apto.vc) -->
+                    <img src="https://apto.vc/_next/image?url=https%3A%2F%2Fapi.apto.vc%2Fimages%2Frealties%2F11637%2Fresidencial-plazas-de-madrid-card-1.jpg&w=1920&q=70"
+                         alt="Imóvel referência" class="sobre-imagem mb-4"
+                         onerror="this.src='https://placehold.co/600x400/0a1e2f/c8a052?text=Hernandes+Imobiliária'">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="sobre-card">
+                                <div class="icon-circle">
+                                    <!-- Thumbnail Google como ícone decorativo -->
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl3YrQPXyBX7ZvAU2EBt4kBAHf1FJt4GIT8Q&s"
+                                         alt="Ícone fundação" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fa-solid fa-calendar-check\'></i>'">
+                                </div>
+                                <h5>Fundação</h5>
+                                <p>26 de maio de 2000<br><small class="text-muted">25 anos, 11 meses e 11 dias</small></p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="sobre-card">
+                                <div class="icon-circle"><i class="fa-solid fa-file-shield"></i></div>
+                                <h5>Situação</h5>
+                                <p><span class="badge bg-success fs-6 px-3 py-2">ATIVA</span><br><small class="text-muted">Cadastro regular</small></p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="sobre-card">
+                                <div class="icon-circle"><i class="fa-solid fa-briefcase"></i></div>
+                                <h5>Atividade Principal</h5>
+                                <p>68.10-2-01<br><small class="text-muted">Compra e venda de imóveis próprios</small></p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="sobre-card">
+                                <div class="icon-circle"><i class="fa-solid fa-map-pin"></i></div>
+                                <h5>Sede</h5>
+                                <p>Distrito Industrial I<br><small class="text-muted">Manaus — Amazonas</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SEÇÃO DADOS DA EMPRESA ==================== -->
+    <section class="section-dados" id="dados">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="700">
+                <span class="section-label"><i class="fa-solid fa-database me-1"></i> Informações Oficiais</span>
+                <h2 class="section-title">Dados da Empresa</h2>
+                <p style="color: #8899aa; max-width: 600px; margin: 0 auto;">
+                    Confira abaixo todos os dados cadastrais da Hernandes Imobiliária conforme registros oficiais.
+                </p>
+            </div>
+            <div class="row g-4">
+                <!-- CNPJ -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="0">
+                    <div class="dado-card">
+                        <div class="dado-icon"><i class="fa-solid fa-fingerprint"></i></div>
+                        <h5>CNPJ</h5>
+                        <p class="dado-valor">03.838.437/0001-97</p>
+                        <small>03838437000197</small>
+                    </div>
+                </div>
+                <!-- Razão Social -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">
+                    <div class="dado-card">
+                        <div class="dado-icon"><i class="fa-solid fa-file-signature"></i></div>
+                        <h5>Razão Social</h5>
+                        <p>Hernandes Administradora de Bens Próprios LTDA</p>
+                    </div>
+                </div>
+                <!-- Nome Fantasia -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
+                    <div class="dado-card">
+                        <div class="dado-icon"><i class="fa-solid fa-store"></i></div>
+                        <h5>Nome Fantasia</h5>
+                        <p class="dado-valor" style="font-size: 1.3rem;">Hernandes Imobiliária</p>
+                    </div>
+                </div>
+                <!-- Data de Abertura -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="450">
+                    <div class="dado-card">
+                        <div class="dado-icon"><i class="fa-solid fa-calendar-days"></i></div>
+                        <h5>Data de Abertura</h5>
+                        <p class="dado-valor">26/05/2000</p>
+                        <small>25 anos, 11 meses e 11 dias</small>
+                    </div>
+                </div>
+                <!-- Atividade -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+                    <div class="dado-card">
+                        <div class="dado-icon"><i class="fa-solid fa-code-branch"></i></div>
+                        <h5>CNAE (Receita Federal)</h5>
+                        <p class="dado-valor" style="font-size: 1.2rem;">68.10-2-01</p>
+                        <small>Compra e venda de imóveis próprios</small>
+                    </div>
+                </div>
+                <!-- Situação -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="250">
+                    <div class="dado-card">
+                        <div class="dado-icon"><i class="fa-solid fa-circle-check"></i></div>
+                        <h5>Situação Cadastral</h5>
+                        <p class="dado-valor" style="color: #4ade80; font-size: 1.6rem;">ATIVA</p>
+                        <small>Cadastro regularizado</small>
+                    </div>
+                </div>
+                <!-- Município/Estado -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">
+                    <div class="dado-card">
+                        <div class="dado-icon"><i class="fa-solid fa-city"></i></div>
+                        <h5>Localidade</h5>
+                        <p class="dado-valor" style="font-size: 1.5rem;">Manaus</p>
+                        <small>Estado do Amazonas</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SEÇÃO CONTATO ==================== -->
+    <section class="section-contato" id="contato">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="700">
+                <span class="section-label"><i class="fa-solid fa-address-book me-1"></i> Fale Conosco</span>
+                <h2 class="section-title">Canais de Contato</h2>
+                <p style="color: #4a5568; max-width: 600px; margin: 0 auto;">
+                    Estamos prontos para atendê-lo. Escolha o canal de sua preferência.
+                </p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <!-- E-mail -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="0">
+                    <div class="contato-card">
+                        <div class="contato-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <h5>E-mail</h5>
+                        <a href="mailto:jose.pequeno@transhernandes.com.br">jose.pequeno@transhernandes.com.br</a>
+                        <br>
+                        <a href="mailto:jose.pequeno@transhernandes.com.br" class="btn btn-sm btn-outline-secondary mt-3 rounded-pill">
+                            <i class="fa-solid fa-paper-plane me-1"></i> Enviar E-mail
+                        </a>
+                    </div>
+                </div>
+                <!-- Telefone Principal -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+                    <div class="contato-card">
+                        <div class="contato-icon"><i class="fa-solid fa-phone"></i></div>
+                        <h5>Telefone Principal</h5>
+                        <a href="tel:+559221270001" class="telefone-destaque">(92) 2127-0001</a>
+                        <br>
+                        <a href="tel:+559221270001" class="btn btn-sm btn-gold mt-3 rounded-pill">
+                            <i class="fa-solid fa-phone me-1"></i> Ligar Agora
+                        </a>
+                    </div>
+                </div>
+                <!-- Telefones Adicionais -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">
+                    <div class="contato-card">
+                        <div class="contato-icon"><i class="fa-solid fa-headset"></i></div>
+                        <h5>Outros Telefones</h5>
+                        <a href="tel:+559221270029" class="telefone-destaque">(92) 2127-0029</a><br>
+                        <a href="tel:+559221270007" class="telefone-destaque">(92) 2127-0007</a>
+                        <br><br>
+                        <small class="text-muted">Horário comercial</small>
+                    </div>
+                </div>
+            </div>
+            <!-- WhatsApp -->
+            <div class="text-center mt-5" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+                <a href="https://wa.me/559221270001?text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20Hernandes%20Imobili%C3%A1ria."
+                    target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
+                    <i class="fa-brands fa-whatsapp fa-lg"></i> Atendimento via WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SEÇÃO LOCALIZAÇÃO ==================== -->
+    <section class="section-localizacao" id="localizacao">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="700">
+                <span class="section-label"><i class="fa-solid fa-location-crosshairs me-1"></i> Onde Estamos</span>
+                <h2 class="section-title">Nossa Localização</h2>
+                <p style="color: #4a5568; max-width: 600px; margin: 0 auto;">
+                    Visite nossa sede no Distrito Industrial I, em Manaus.
+                </p>
+            </div>
+            <div class="row g-4 align-items-stretch">
+                <div class="col-lg-6" data-aos="fade-right" data-aos-duration="800">
+                    <div class="endereco-box">
+                        <div class="endereco-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                        <h4>Endereço Completo</h4>
+                        <p><strong>Logradouro:</strong> Avenida Guaruba, 787</p>
+                        <p><strong>Complemento:</strong> Bloco A</p>
+                        <p><strong>Bairro:</strong> Distrito Industrial I</p>
+                        <p><strong>CEP:</strong> <span class="cep-badge">69075-080</span></p>
+                        <p><strong>Município:</strong> Manaus</p>
+                        <p><strong>Estado:</strong> Amazonas</p>
+                        <hr class="my-3" style="border-color: #dce3ea;">
+                        <p><small class="text-muted"><i class="fa-solid fa-envelope me-1"></i> <strong>Para correspondência:</strong><br>
+                                Hernandes Imobiliária — Hernandes Administradora de Bens Próprios LTDA<br>
+                                Avenida Guaruba, 787, Bloco A — Distrito Industrial I<br>
+                                Manaus/AM — CEP: 69075-080</small></p>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="800">
+                    <!-- Imagem corporativa (LinkedIn) no lugar do mapa -->
+                    <a href="https://www.google.com/maps/search/Avenida+Guaruba+787+Distrito+Industrial+I+Manaus+AM"
+                        target="_blank" rel="noopener noreferrer">
+                        <img src="https://media.licdn.com/dms/image/v2/C4D1BAQFeUZ8CdR-1cA/company-background_10000/company-background_10000/0/1583576134587/hernandez_consultoria_imobiliaria_cover?e=2147483647&v=beta&t=10fGGQ4hOEctITB5Mgv2XNVnTjU2IZx8VVd5-3SvsVI"
+                             alt="Hernandes Imobiliária - Localização"
+                             class="mapa-imagem"
+                             onerror="this.src='https://placehold.co/600x400/0a1e2f/c8a052?text=Hernandes+Imobili%C3%A1ria+-+Manaus/AM'">
+                    </a>
+                    <p class="text-center mt-3">
+                        <small class="text-muted"><i class="fa-solid fa-map-pin me-1"></i> Clique na imagem para abrir o Google Maps</small>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="600">
+                    <h5><i class="fa-solid fa-building-columns me-2"></i>Hernandes Imobiliária</h5>
+                    <p>
+                        Hernandes Administradora de Bens Próprios LTDA<br>
+                        CNPJ: 03.838.437/0001-97<br>
+                        Fundada em 26 de maio de 2000<br>
+                        <strong style="color: #4ade80;">Situação: ATIVA</strong>
+                    </p>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+                    <h5><i class="fa-solid fa-link me-2"></i>Links Rápidos</h5>
+                    <ul class="footer-links">
+                        <li><a href="#home"><i class="fa-solid fa-chevron-right me-1"></i> Início</a></li>
+                        <li><a href="sobre.html"><i class="fa-solid fa-chevron-right me-1"></i> Sobre</a></li>
+                        <li><a href="#dados"><i class="fa-solid fa-chevron-right me-1"></i> Dados da Empresa</a></li>
+                        <li><a href="#contato"><i class="fa-solid fa-chevron-right me-1"></i> Contato</a></li>
+                        <li><a href="#localizacao"><i class="fa-solid fa-chevron-right me-1"></i> Localização</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">
+                    <h5><i class="fa-solid fa-clock me-2"></i>Atividade</h5>
+                    <p>
+                        <strong>CNAE:</strong> 68.10-2-01<br>
+                        Compra e venda de imóveis próprios<br>
+                        Atendimento em Manaus/AM<br>
+                        Distrito Industrial I
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="mb-2">
+                    &copy; 2000 – <span id="ano-atual"></span> <span class="gold-link">Hernandes Imobiliária</span> —
+                    Hernandes Administradora de Bens Próprios LTDA. Todos os direitos reservados.
+                </p>
+                <p class="mb-0">
+                    <a href="politica-privacidade.html" class="me-3">
+                        <i class="fa-solid fa-shield-halved me-1"></i> Política de Privacidade
+                    </a>
+                    <a href="termos-de-uso.html">
+                        <i class="fa-solid fa-file-contract me-1"></i> Termos de Uso
+                    </a>
+                </p>
+                <p class="mt-1"><small>CNPJ: 03.838.437/0001-97 | Manaus — Amazonas | Brasil</small></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Voltar ao Topo -->
+    <button class="btn-voltar-topo" id="btnVoltarTopo" title="Voltar ao topo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        AOS.init({ once: true, offset: 80, duration: 700 });
+        document.getElementById('ano-atual').textContent = new Date().getFullYear();
+
+        const navbar = document.getElementById('navbar');
+        const btnVoltarTopo = document.getElementById('btnVoltarTopo');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 60) navbar.classList.add('scrolled');
+            else navbar.classList.remove('scrolled');
+
+            if (window.scrollY > 500) btnVoltarTopo.classList.add('visible');
+            else btnVoltarTopo.classList.remove('visible');
+
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            let currentSection = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.offsetHeight;
+                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + currentSection) link.classList.add('active');
+            });
+        });
+
+        const navLinks = document.querySelectorAll('.nav-link');
+        const navbarCollapse = document.getElementById('navbarNav');
+        const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 992) bsCollapse.hide();
+            });
+        });
+    </script>
 </body>
 </html>
